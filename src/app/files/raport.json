@@ -1,0 +1,43 @@
+[
+    {
+        "lp": "1",
+        "id": "1159",
+        "client": "123",
+        "contractNumber": "1159",
+        "fkNumber": "0",
+        "redemptionOfRepayments": "0.00",
+        "sumOfRepayments": "251.31",
+        "capital": "1",
+        "contractualTermInterest": "15.33",
+        "overdueContractualInterest": "0.00",
+        "sumOfContractualInterest": "15.33",
+        "penaltyInterest": "2",
+        "interestInCourt": "0.00",
+        "totalInterest": "15.33",
+        "commission": "0.00",
+        "bailiffCommission": "0.00",
+        "overpaymentOfCapitalPeriod": "0.00",
+        "othersInCourt": "0.00"
+    },
+    {
+        "lp": "2",
+        "id": "1231",
+        "client": "1",
+        "contractNumber": "1231",
+        "fkNumber": "",
+        "redemptionOfRepayments": "0",
+        "sumOfRepayments": "111.31",
+        "capital": "2",
+        "contractualTermInterest": "21.33",
+        "overdueContractualInterest": "100",
+        "sumOfContractualInterest": "12",
+        "penaltyInterest": "11",
+        "interestInCourt": "0.31",
+        "totalInterest": "1.32",
+        "commission": "22.22",
+        "bailiffCommission": "134.12",
+        "overpaymentOfCapitalPeriod": "123",
+        "othersInCourt": "99.33"
+    }
+    
+]
