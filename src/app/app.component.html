@@ -5,24 +5,26 @@
     <option value="client">Klient</option>
     <option value="contractNumber">Numer umowy</option>
     <option value="fkNumber">Numer w FK</option>
-    <option value="redemptionOfRepayments">Splata Umorzenie</option>
-    <option value="sumOfRepayments">Suma Splat</option>
-    <option value="capital">Kapital</option>
+    <option value="redemptionOfRepayments">Spłata Umorzenie</option>
+    <option value="sumOfRepayments">Suma Spłat</option>
+    <option value="capital">Kapitał</option>
     <option value="contractualTermInterest">Odsetki umowne terminowe</option>
-    <option value="overdueContractualInterest">Odsetki umowne zalegle</option>
+    <option value="overdueContractualInterest">Odsetki umowne zaległe</option>
     <option value="sumOfContractualInterest">Suma odsetek umownych</option>
     <option value="penaltyInterest">Odsetki karne</option>
-    <option value="interestInCourt">Odsetki w sadzie</option>
+    <option value="interestInCourt">Odsetki w sądzie</option>
     <option value="totalInterest">Suma odsetek</option>
     <option value="commission">Prowizja</option>
     <option value="bailiffCommission">Prowizja komornicza</option>
-    <option value="overpaymentOfCapitalPeriod">Nadplata kapitalu w okresie</option>
-    <option value="othersInCourt">Inne w sadzie</option>
+    <option value="overpaymentOfCapitalPeriod">Nadpłata kapitału w okresie</option>
+    <option value="othersInCourt">Inne w sądzie</option>
   </select>
-  <button (click)="makePdf()">Generuj PDF</button>
+  <button (click)="makePdf2()">Generuj PDF</button>
   <button (click)="makeExcel()">Generuj EXCEL</button>
   <button (click)="downloadFile()">Pobierz plik json</button>
-  <table id="content" #content>
+  </div>
+  <div id="content" #content >
+  <table id="pdf">
     <thead>
       <tr>
         <td></td>
@@ -31,19 +33,19 @@
         <th *ngIf="selectedColumns.indexOf('client') !== -1">Klient</th>
         <th *ngIf="selectedColumns.indexOf('contractNumber') !== -1">Numer umowy</th>
         <th *ngIf="selectedColumns.indexOf('fkNumber') !== -1">Numer w FK</th>
-        <th *ngIf="selectedColumns.indexOf('redemptionOfRepayments') !== -1">Splata Umorzenie</th>
-        <th *ngIf="selectedColumns.indexOf('sumOfRepayments') !== -1">Suma Splat</th>
-        <th *ngIf="selectedColumns.indexOf('capital') !== -1">Kapital</th>
+        <th *ngIf="selectedColumns.indexOf('redemptionOfRepayments') !== -1">Spłata Umorzenie</th>
+        <th *ngIf="selectedColumns.indexOf('sumOfRepayments') !== -1">Suma Spłat</th>
+        <th *ngIf="selectedColumns.indexOf('capital') !== -1">Kapitał</th>
         <th *ngIf="selectedColumns.indexOf('contractualTermInterest') !== -1">Odsetki umowne terminowe</th>
-        <th *ngIf="selectedColumns.indexOf('overdueContractualInterest') !== -1">Odsetki umowne zalegle</th>
+        <th *ngIf="selectedColumns.indexOf('overdueContractualInterest') !== -1">Odsetki umowne zaległe</th>
         <th *ngIf="selectedColumns.indexOf('sumOfContractualInterest') !== -1">Suma odsetek umownych</th>
         <th *ngIf="selectedColumns.indexOf('penaltyInterest') !== -1">Odsetki karne</th>
-        <th *ngIf="selectedColumns.indexOf('interestInCourt') !== -1">Odsetki w sadzie</th>
+        <th *ngIf="selectedColumns.indexOf('interestInCourt') !== -1">Odsetki w sądzie</th>
         <th *ngIf="selectedColumns.indexOf('totalInterest') !== -1">Suma odsetek</th>
         <th *ngIf="selectedColumns.indexOf('commission') !== -1">Prowizja</th>
         <th *ngIf="selectedColumns.indexOf('bailiffCommission') !== -1">Prowizja komornicza</th>
-        <th *ngIf="selectedColumns.indexOf('overpaymentOfCapitalPeriod') !== -1">Nadplata kapitalu w okresie</th>
-        <th *ngIf="selectedColumns.indexOf('othersInCourt') !== -1">Inne w sadzie</th>
+        <th *ngIf="selectedColumns.indexOf('overpaymentOfCapitalPeriod') !== -1">Nadpłata kapitału w okresie</th>
+        <th *ngIf="selectedColumns.indexOf('othersInCourt') !== -1">Inne w sądzie</th>
       </tr>
     </thead>
     <tbody>
@@ -77,19 +79,19 @@
         <td *ngIf="selectedColumns.indexOf('client') !== -1"></td>
         <td *ngIf="selectedColumns.indexOf('contractNumber') !== -1"></td>
         <td *ngIf="selectedColumns.indexOf('fkNumber') !== -1"></td>
-        <td *ngIf="selectedColumns.indexOf('redemptionOfRepayments') !== -1">{{sum1}}</td>
-        <td *ngIf="selectedColumns.indexOf('sumOfRepayments') !== -1">{{sum2}}</td>
-        <td *ngIf="selectedColumns.indexOf('capital') !== -1">{{sum3}}</td>
-        <td *ngIf="selectedColumns.indexOf('contractualTermInterest') !== -1">{{sum4}}</td>
-        <td *ngIf="selectedColumns.indexOf('overdueContractualInterest') !== -1">{{sum5}}</td>
-        <td *ngIf="selectedColumns.indexOf('sumOfContractualInterest') !== -1">{{sum6}}</td>
-        <td *ngIf="selectedColumns.indexOf('penaltyInterest') !== -1">{{sum7}}</td>
-        <td *ngIf="selectedColumns.indexOf('interestInCourt') !== -1">{{sum8}}</td>
-        <td *ngIf="selectedColumns.indexOf('totalInterest') !== -1">{{sum9}}</td>
-        <td *ngIf="selectedColumns.indexOf('commission') !== -1">{{sum10}}</td>
-        <td *ngIf="selectedColumns.indexOf('bailiffCommission') !== -1">{{sum11}}</td>
-        <td *ngIf="selectedColumns.indexOf('overpaymentOfCapitalPeriod') !== -1">{{sum12}}</td>
-        <td *ngIf="selectedColumns.indexOf('othersInCourt') !== -1">{{sum13}}</td>
+        <td *ngIf="selectedColumns.indexOf('redemptionOfRepayments') !== -1">{{sums[0]}}</td>
+        <td *ngIf="selectedColumns.indexOf('sumOfRepayments') !== -1">{{sums[1]}}</td>
+        <td *ngIf="selectedColumns.indexOf('capital') !== -1">{{sums[2]}}</td>
+        <td *ngIf="selectedColumns.indexOf('contractualTermInterest') !== -1">{{sums[3]}}</td>
+        <td *ngIf="selectedColumns.indexOf('overdueContractualInterest') !== -1">{{sums[4]}}</td>
+        <td *ngIf="selectedColumns.indexOf('sumOfContractualInterest') !== -1">{{sums[5]}}</td>
+        <td *ngIf="selectedColumns.indexOf('penaltyInterest') !== -1">{{sums[6]}}</td>
+        <td *ngIf="selectedColumns.indexOf('interestInCourt') !== -1">{{sums[7]}}</td>
+        <td *ngIf="selectedColumns.indexOf('totalInterest') !== -1">{{sums[8]}}</td>
+        <td *ngIf="selectedColumns.indexOf('commission') !== -1">{{sums[9]}}</td>
+        <td *ngIf="selectedColumns.indexOf('bailiffCommission') !== -1">{{sums[10]}}</td>
+        <td *ngIf="selectedColumns.indexOf('overpaymentOfCapitalPeriod') !== -1">{{sums[11]}}</td>
+        <td *ngIf="selectedColumns.indexOf('othersInCourt') !== -1">{{sums[12]}}</td>
       </tr>
     </tfoot>
   </table>

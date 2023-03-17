@@ -13,6 +13,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "core-js",
+              "jspdf-autotable",
+              "raf",
+              "rgbcolor",
+              "html2canvas"
+            ],
             "outputPath": "dist/tabelka",
             "index": "src/index.html",
             "main": "src/main.ts",
